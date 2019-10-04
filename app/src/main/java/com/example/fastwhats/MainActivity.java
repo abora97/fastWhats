@@ -12,8 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class MainActivity extends AppCompatActivity {
-    Button buStart;
+    FloatingActionButton buStart;
     EditText etNum;
 
     @Override
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (etNum != null)
-                    orderFun(MainActivity.this, etNum.getText().toString());
+                    orderFun(MainActivity.this, etNum.getText().toString().trim().replaceAll(" ",""));
             }
         });
     }
